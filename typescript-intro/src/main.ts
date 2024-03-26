@@ -1,5 +1,6 @@
 import './style.css'
-import { setupCounter } from './counter.ts'
+
+import './topics/basic-types.ts'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 Hello World!

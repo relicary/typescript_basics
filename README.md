@@ -27,3 +27,30 @@ $> npm run dev
 * Con la orden ```npm run dev``` se levanta un servidor Vite sobre el que se trabaja.
 
 La utilidad de **ViTE** es que cuando se realiza un cambio en un fichero TS, éste se refresca automáticamente.
+
+## Declaración de tipos
+
+Palabras reservadas
+
+* ```let```
+* ```const```
+
+Cómo declarar variables
+
+* Podemos definir el tipo de cada variable.
+* Podemos indicar que una variable puede tener más de un tipo.
+* Una variable puede ser de un tipo o un valor constante.
+
+## Imports y exports
+
+Al final de cada fichero creado, se añade la línea:
+
+```typescript
+export {};
+```
+
+Y de ese modo pueden leerse en otros ficheros mediante la cabecera
+
+```typescript
+import './topics/basic-types.ts'
+```
