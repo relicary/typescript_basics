@@ -25,3 +25,5 @@ $> npm run dev
 
 * El fichero ```package.json``` es una serie de definiciones de cómo es nuestro proyecto. Por ejemplo, el script ```dev``` que se ha ejecutado en el código superior.
 * Con la orden ```npm run dev``` se levanta un servidor Vite sobre el que se trabaja.
+
+La utilidad de **ViTE** es que cuando se realiza un cambio en un fichero TS, éste se refresca automáticamente.
