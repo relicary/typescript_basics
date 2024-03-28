@@ -79,7 +79,7 @@ const strider = {
 };
 ```
 
-Si la declaración de tipos es necesaria, se usan las interfaces que es el equivalente a definir un Tipo complejo
+Si la declaración de tipos es necesaria, se usan las **interfaces** que es el equivalente a definir un Tipo complejo
 
 ```typescript
 interface Character {
@@ -96,4 +96,16 @@ const strider: Character = {
     hp: 100,
     skills: ['Bash', 'Counter']
 };
+```
+
+## Funciones básicas
+
+Existen las funciones estándar. Cada parámetro puede declararse o inferirse. Por claridad, se suelen especificar tanto los parámetros como el tipo de retorno.
+
+```typescript
+function addNumbers(a: number, b: number) : number {
+    return a + b;
+}
+
+const result: number = addNumbers(1, 2);
 ```
