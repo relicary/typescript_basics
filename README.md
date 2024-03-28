@@ -54,3 +54,46 @@ Y de ese modo pueden leerse en otros ficheros mediante la cabecera
 ```typescript
 import './topics/basic-types.ts'
 ```
+
+## Arrays, Objects y Interefaces
+
+Los **arrays** pueden contener elementos de varios tipos diferentes.
+
+```typescript
+let skills = ['Bash', 'Counter', 'Healing', true, 123];
+```
+
+Pero se puede forzar un único tipo en su declaración
+
+```typescript
+let skills: string[] = ['Bash', 'Counter', 'Healing'];
+```
+
+Se pueden crear objetos pero no se pueden definir en ellos los tipos de sus campos
+
+```typescript
+const strider = {
+    name: 'Strider',
+    hp: 100,
+    skills: ['Bash', 'Counter']
+};
+```
+
+Si la declaración de tipos es necesaria, se usan las interfaces que es el equivalente a definir un Tipo complejo
+
+```typescript
+interface Character {
+    name: string;
+    hp: number;
+    skills: string[];
+    hometown?: string;
+};
+
+// Declaración de una variable tipo Character
+
+const strider: Character = {
+    name: 'Strider',
+    hp: 100,
+    skills: ['Bash', 'Counter']
+};
+```
