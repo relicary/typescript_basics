@@ -167,3 +167,68 @@ const strider : Character = {
     }
 };
 ```
+
+## Objetos
+
+### Destructuración
+
+La **destructuración** consiste en poder tomar los campos que nos interesan de una interfaz y renombrarlos para facilitar la lectura de los mismos.
+
+```typescript
+interface Details {
+    author: string;
+    year: number;
+}
+
+interface AudioPlayer {
+    audioVolume: number;
+    songDuration: number;
+    song: string;
+    details: Details;
+}
+
+const audioPlayer: AudioPlayer = {
+    audioVolume: 90,
+    songDuration: 255,
+    song: "Back In Black",
+    details: {
+        author: "Angus Young, Malcolm Young, Brian Johnson",
+        year: 1980
+    }
+}
+
+const { song, songDuration:duration, details } = audioPlayer;
+const { author } = details;
+
+console.log('Song: ', song);
+console.log('Duration: ', duration);
+console.log('Author: ', author);
+```
+
+#### Arrays
+
+También pueden destructurarse arrays, incluso poniendo valores por defecto o ignorando alguno.
+
+```typescript
+const [, vegeta, trunks = 'Not found']: string[] = ['Goku', 'Vegeta'];
+
+console.log("Character 2: ", vegeta); // Character 2: Vegeta
+console.log("Character 3: ", trunks); // Character 3: Not found
+```
+
+#### Argumentos de función
+
+La destructuración se puede aplicar también a los argumentos de las funciones.
+
+```typescript
+function taxCalculation( {tax, products}: TaxCalcultaionOptions ): [number, number] {
+
+    let total = 0;
+
+    products.forEach( ({ price }) => {
+        total += price
+    });
+
+    return [total, total * tax];
+}
+```
