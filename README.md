@@ -167,3 +167,39 @@ const strider : Character = {
     }
 };
 ```
+
+## Objetos
+
+La **destructuración** consiste en poder tomar los campos que nos interesan de una interfaz y renombrarlos para facilitar la lectura de los mismos.
+
+```typescript
+interface Details {
+    author: string;
+    year: number;
+}
+
+interface AudioPlayer {
+    audioVolume: number;
+    songDuration: number;
+    song: string;
+    details: Details;
+}
+
+const audioPlayer: AudioPlayer = {
+    audioVolume: 90,
+    songDuration: 255,
+    song: "Back In Black",
+    details: {
+        author: "Angus Young, Malcolm Young, Brian Johnson",
+        year: 1980
+    }
+}
+
+const { song, songDuration:duration, details } = audioPlayer;
+const { author } = details;
+
+console.log('Song: ', song);
+console.log('Duration: ', duration);
+console.log('Author: ', author);
+
+```
