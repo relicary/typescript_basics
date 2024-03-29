@@ -32,4 +32,11 @@ console.log('Song: ', song);
 console.log('Duration: ', duration);
 console.log('Author: ', author);
 
+console.log('=========');
+
+const [, vegeta, trunks = 'Not found']: string[] = ['Goku', 'Vegeta'];
+
+console.log("Character 2: ", vegeta);
+console.log("Character 3: ", trunks);
+
 export {};
