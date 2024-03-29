@@ -337,3 +337,25 @@ export class Hero extends Person {
 }
 const hero = new Hero('Ironman', 45, 'Tony Stark'); // name: Tony Stark, address: New York, alterEgo: Ironman, age: 45, realName: Tony Stark
 ```
+
+Aunque se habla mucho de la extensión de clases se recomienda **riorizar composición sobre herencia**
+
+La **composición** consiste en añadir la clase de la que se desea extender como un campo más.
+
+```typescript
+export class Person {    
+    constructor(
+        public firstName: string,
+        public lastName: string,
+        private address?: string 
+    ) {};
+}
+
+export class Hero {
+
+    constructor(
+        public alterEgo: string,
+        public age: number,
+        public person: Person,
+    ) {};
+}
