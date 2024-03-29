@@ -109,3 +109,24 @@ function addNumbers(a: number, b: number) : number {
 
 const result: number = addNumbers(1, 2);
 ```
+### Lambdas
+
+Las funciones se pueden declarar también como lambdas
+
+```typescript
+const addNumbersArrow = (a: number, b: number) : number => {
+    return a + b;
+};
+
+const result: number = addNumbersArrow(1, 2);
+```
+
+Y aplicar el casting al resultado
+
+```typescript
+const addNumbersArrowString = (a: number, b: number) : string => {
+    return `${a + b}`;
+};
+
+const result: string = addNumbersArrowString(1, 2);
+```
