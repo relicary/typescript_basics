@@ -265,3 +265,97 @@ const shoppingCart: Product[] = [
 ```
 
 > **_NOTE:_**  Es una buena práctica que los archivos que sean considerados como "bibliotecas", no tengan código que se ejecute.
+
+## Clases básicas
+
+A diferencia de las interfaces, las clases se componen de propiedades y métodos.
+
+Se pueden de definir de varias maneras en TS.
+
+Por ejemplo, con valores predefinidos
+
+```typescript
+export class Person {
+    public name: string;
+    public address?: string;
+
+    constructor() {
+        this.name='Hal Jordan';
+        this.address='Coast City'
+    };
+}
+const greenLantern = new Person(); // Hal Jordan, Coast City
+```
+
+O sin valores predefinidos en el constructor
+
+```typescript
+export class Person {
+    public name: string;
+    public address?: string;
+
+    constructor(name: string, address: string) {
+        this.name = name;
+        this.address = address;
+    };
+}
+const greenLantern = new Person('Green Lantern', 'Coast City'); // Green Lantern, Coast City
+```
+
+O declarando los campos en el propio constructor
+
+```typescript
+export class Person {
+    constructor(
+        public name: string,
+        private address?: string
+    ) {};
+}
+```
+
+### Extend
+
+Las clases pueden extenderse de modo que se heradan los campos.
+
+```typescript
+export class Person {
+    constructor(
+        public name: string,
+        private address?: string
+    ) {};
+}
+
+export class Hero extends Person {
+
+    constructor(
+        public alterEgo: string,
+        public age: number,
+        public realName : string,
+    ) {
+        super(realName, 'New York');
+    }
+}
+const hero = new Hero('Ironman', 45, 'Tony Stark'); // name: Tony Stark, address: New York, alterEgo: Ironman, age: 45, realName: Tony Stark
+```
+
+Aunque se habla mucho de la extensión de clases se recomienda **riorizar composición sobre herencia**
+
+La **composición** consiste en añadir la clase de la que se desea extender como un campo más.
+
+```typescript
+export class Person {    
+    constructor(
+        public firstName: string,
+        public lastName: string,
+        private address?: string 
+    ) {};
+}
+
+export class Hero {
+
+    constructor(
+        public alterEgo: string,
+        public age: number,
+        public person: Person,
+    ) {};
+}
