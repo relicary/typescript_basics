@@ -4,4 +4,12 @@ interface Address {
     city: string;
 }
 
+interface SuperHero {
+    name: string;
+    age: number;
+    address: Address;
+    showAddress: () => string;
+}
+
+
 export {};
