@@ -8,6 +8,17 @@ export class Person {
     };
 }
 
-const superhero = new Person('Clark Kent', 'Metropolis');
+export class Hero extends Person {
 
-console.log({ superhero });
+    constructor(
+        public alterEgo: string,
+        public age: number,
+        public realName : string,
+    ) {
+        super(realName, 'New York');
+    }
+}
+
+const hero = new Hero('Ironman', 45, 'Tony Stark');
+
+console.log({ hero });

@@ -312,3 +312,28 @@ export class Person {
     ) {};
 }
 ```
+
+### Extend
+
+Las clases pueden extenderse de modo que se heradan los campos.
+
+```typescript
+export class Person {
+    constructor(
+        public name: string,
+        private address?: string
+    ) {};
+}
+
+export class Hero extends Person {
+
+    constructor(
+        public alterEgo: string,
+        public age: number,
+        public realName : string,
+    ) {
+        super(realName, 'New York');
+    }
+}
+const hero = new Hero('Ironman', 45, 'Tony Stark'); // name: Tony Stark, address: New York, alterEgo: Ironman, age: 45, realName: Tony Stark
+```
