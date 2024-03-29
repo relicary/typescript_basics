@@ -147,3 +147,23 @@ const result4: number = multiply(5); // 10
 
 const result5: number = multiply(5, 3); // 15
 ```
+
+### Funciones e interfaces
+
+Las funciones pueden declararse también dentro de una interface.
+
+```typescript
+interface Character {
+    name: string;
+    hp: number;
+    showHp: () => void;
+};
+
+const strider : Character = {
+    name: 'Strider',
+    hp: 50,
+    showHp() {
+        console.log(`Heal points ${this.hp}`);
+    }
+};
+```

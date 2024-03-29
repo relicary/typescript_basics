@@ -28,4 +28,26 @@ const result5: number = multiply(5, 3);
 
 console.log({result, result2, result3, result4, result5});
 
+interface Character {
+    name: string;
+    hp: number;
+    showHp: () => void;
+};
+
+const trancos : Character = {
+    name: 'Trancos',
+    hp: 50,
+    showHp() {
+        console.log(`Heal points ${this.hp}`);
+    }
+};
+
+const healCharacter = (character : Character, amount: number) => {
+    character.hp += amount;
+};
+
+trancos.showHp();
+healCharacter(trancos, 10);
+trancos.showHp();
+
 export {};
