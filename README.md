@@ -205,6 +205,8 @@ console.log('Duration: ', duration);
 console.log('Author: ', author);
 ```
 
+#### Arrays
+
 También pueden destructurarse arrays, incluso poniendo valores por defecto o ignorando alguno.
 
 ```typescript
@@ -212,4 +214,21 @@ const [, vegeta, trunks = 'Not found']: string[] = ['Goku', 'Vegeta'];
 
 console.log("Character 2: ", vegeta); // Character 2: Vegeta
 console.log("Character 3: ", trunks); // Character 3: Not found
+```
+
+#### Argumentos de función
+
+La destructuración se puede aplicar también a los argumentos de las funciones.
+
+```typescript
+function taxCalculation( {tax, products}: TaxCalcultaionOptions ): [number, number] {
+
+    let total = 0;
+
+    products.forEach( ({ price }) => {
+        total += price
+    });
+
+    return [total, total * tax];
+}
 ```
