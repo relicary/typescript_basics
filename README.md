@@ -130,3 +130,20 @@ const addNumbersArrowString = (a: number, b: number) : string => {
 
 const result: string = addNumbersArrowString(1, 2);
 ```
+
+### Argumentos de tipo default u opcionales
+
+También pueden declararse los argumentos como opcionales o con valores por defecto.
+
+```typescript
+function multiply (firstNumber: number, secondNumber?: number, base: number=2) : number {
+    if (secondNumber !== undefined) {
+        return firstNumber * secondNumber;
+    }
+    return firstNumber * base;
+}
+
+const result4: number = multiply(5); // 10
+
+const result5: number = multiply(5, 3); // 15
+```
