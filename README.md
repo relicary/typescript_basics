@@ -272,14 +272,32 @@ A diferencia de las interfaces, las clases se componen de propiedades y métodos
 
 Se pueden de definir de varias maneras en TS.
 
+Por ejemplo, con valores predefinidos
+
 ```typescript
 export class Person {
     public name: string;
     public address?: string;
 
     constructor() {
-        this.name='Hal';
+        this.name='Hal Jordan';
         this.address='Coast City'
     };
 }
+const greenLantern = new Person(); // Hal Jordan, Coast City
+```
+
+O sin valores predefinidos en el constructor
+
+```typescript
+export class Person {
+    public name: string;
+    public address?: string;
+
+    constructor(name: string, address: string) {
+        this.name = name;
+        this.address = address;
+    };
+}
+const greenLantern = new Person('Green Lantern', 'Coast City'); // Green Lantern, Coast City
 ```
