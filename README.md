@@ -265,3 +265,21 @@ const shoppingCart: Product[] = [
 ```
 
 > **_NOTE:_**  Es una buena práctica que los archivos que sean considerados como "bibliotecas", no tengan código que se ejecute.
+
+## Clases básicas
+
+A diferencia de las interfaces, las clases se componen de propiedades y métodos.
+
+Se pueden de definir de varias maneras en TS.
+
+```typescript
+export class Person {
+    public name: string;
+    public address?: string;
+
+    constructor() {
+        this.name='Hal';
+        this.address='Coast City'
+    };
+}
+```
