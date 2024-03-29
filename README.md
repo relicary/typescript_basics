@@ -301,3 +301,14 @@ export class Person {
 }
 const greenLantern = new Person('Green Lantern', 'Coast City'); // Green Lantern, Coast City
 ```
+
+O declarando los campos en el propio constructor
+
+```typescript
+export class Person {
+    constructor(
+        public name: string,
+        private address?: string
+    ) {};
+}
+```
