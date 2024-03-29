@@ -232,3 +232,36 @@ function taxCalculation( {tax, products}: TaxCalcultaionOptions ): [number, numb
     return [total, total * tax];
 }
 ```
+
+## Imports & Exports
+
+Es la forma de declarar módulos para que puedan usarlos otros ficheros.
+
+Se realiza desde dos lados:
+
+1. Los elementos de un fichero TS que debe poderse leer, vienen acompañados de la palabra ```export```
+2. Los ficheros que usen esos elementos, debe declarar al inicio su disposición con la palabra ```import```
+
+```typescript
+export interface Product {
+    description: string;
+    price: number;
+}
+```
+
+```typescript
+import { Product } from './function-destructuring'
+
+const shoppingCart: Product[] = [
+    {
+        description: 'Nokia',
+        price: 100
+    },
+    {
+        description: 'iPad',
+        price: 150
+    },
+];
+```
+
+> **_NOTE:_**  Es una buena práctica que los archivos que sean considerados como "bibliotecas", no tengan código que se ejecute.
