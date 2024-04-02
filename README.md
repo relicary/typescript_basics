@@ -423,3 +423,27 @@ printChildren(passenger);
 ```
 
 En la llamada de la función, el símbolo `?` indica que solamente tiene que usar ```length``` si ```children``` tiene algún contenido. En caso contrario, imprime cero.
+
+Otro símbolo usado es el `!` que garantiza que nunca va a haber un resultado ```undefined``` en ```children```, es decir, obliga a ejecutar la sentencia que haya tras él.
+
+```typescript
+export interface Passenger {
+    name: string;
+    children?: string[];
+}
+
+const passenger: Passenger = {
+    name: 'John'
+}
+
+const printChildren = (passenger: Passenger) => {
+    
+    if(!passenger.children)
+        return 0;
+    
+    return passenger.children!.length;
+}
+
+printChildren(passenger);
+```
+
