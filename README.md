@@ -338,7 +338,9 @@ export class Hero extends Person {
 const hero = new Hero('Ironman', 45, 'Tony Stark'); // name: Tony Stark, address: New York, alterEgo: Ironman, age: 45, realName: Tony Stark
 ```
 
-Aunque se habla mucho de la extensión de clases se recomienda **riorizar composición sobre herencia**
+## Composición
+
+Aunque se habla mucho de la extensión de clases se recomienda **priorizar composición sobre herencia**
 
 La **composición** consiste en añadir la clase de la que se desea extender como un campo más.
 
@@ -359,3 +361,37 @@ export class Hero {
         public person: Person,
     ) {};
 }
+```
+
+## Generics
+
+En ocasiones, se pueden crear funciones de cuyos argumentos no sepamos el tipo.
+
+Los **genéricos** nos permiten **inferir** de qué tipo es una variable y se declaran con el operador diamante ```<>```. De esta forma, cuando se usa la variable genérica el propio editor infiere si su uso es correcto o no.
+
+```typescript
+export function whatsMyType<T>( argument : T ) : T {
+    return argument;
+}
+
+let amIString = whatsMyType('Hola Mundo');  // (2) ['Hola', 'Mundo']
+let amINumber = whatsMyType(100); // 100
+let amIArray = whatsMyType([1,2,3,4]); // 1-2-3-4
+```
+
+Aunque también se puede especificar el tipo al realizar la llamada de la función mediante el operador `<>`
+
+```typescript
+export function whatsMyType<T>( argument : T ) : T {
+    return argument;
+}
+
+let amIString = whatsMyType<string>('Hola Mundo');
+console.log(amIString.split(' '));
+
+let amINumber = whatsMyType<number>(100);
+console.log(amINumber.toFixed());
+
+let amIArray = whatsMyType<number[]>([1,2,3,4]);
+console.log(amIArray.join('-'));
+```

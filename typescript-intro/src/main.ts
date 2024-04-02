@@ -8,6 +8,7 @@ import './topics/basic-destructuring.ts'
 import './topics/function-destructuring.ts'
 import './topics/import-export.ts'
 import './topics/classes.ts'
+import './topics/generics.ts'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 Hello World!
