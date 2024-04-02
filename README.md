@@ -395,3 +395,31 @@ console.log(amINumber.toFixed());
 let amIArray = whatsMyType<number[]>([1,2,3,4]);
 console.log(amIArray.join('-'));
 ```
+
+## Optional Chaining
+
+El **optional chaining** se basa en el uso de una sintaxis para comprobar si un elemento es `empty` o `undefined` y evitar un `NullPointerException` o similar.
+
+Para ello se hace uso del carácter `?` que indica que una operación solamente se realiza si el valor existe.
+
+```typescript
+export interface Passenger {
+    name: string;
+    children?: string[];
+}
+
+const passenger: Passenger = {
+    name: 'John'
+}
+
+const printChildren = (passenger: Passenger) => {
+    
+    const howManyChildren = passenger.children?.length || 0;
+    
+    console.log( passenger.name,  howManyChildren);
+}
+
+printChildren(passenger);
+```
+
+En la llamada de la función, el símbolo `?` indica que solamente tiene que usar ```length``` si ```children``` tiene algún contenido. En caso contrario, imprime cero.

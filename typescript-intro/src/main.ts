@@ -9,6 +9,7 @@ import './topics/function-destructuring.ts'
 import './topics/import-export.ts'
 import './topics/classes.ts'
 import './topics/generics.ts'
+import './topics/optional-chaining.ts'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 Hello World!
